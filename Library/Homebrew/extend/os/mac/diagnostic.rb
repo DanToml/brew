@@ -14,7 +14,7 @@ module Homebrew
       end
 
       def fatal_development_tools_checks
-        if ENV["TRAVIS"] || ARGV.homebrew_developer?
+        if ENV["TRAVIS"] || ENV["CIRCLECI"] || ARGV.homebrew_developer?
           %w[
           ]
         else
